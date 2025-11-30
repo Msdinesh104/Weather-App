@@ -22,18 +22,18 @@ export default function App() {
 
       let data = res.data;
 
-      // Main weather
+      
       setWeather(data.weather[0].main);
       setDisc(data.weather[0].description);
       setTemp(data.main.temp);
       setIcon(data.weather[0].icon);
 
-      // Extra weather data
+      
       setHumidity(data.main.humidity);
       setFeels(data.main.feels_like);
       setWind(data.wind.speed);
 
-      // Fetch nearby cities
+      
       const lat = data.coord.lat;
       const lon = data.coord.lon;
 
@@ -53,15 +53,15 @@ export default function App() {
 
       <div className="bg-white/10 backdrop-blur-2xl p-10 rounded-3xl shadow-2xl w-full max-w-lg border border-white/20 animate-card">
 
-        {/* Title */}
+        
         <h1 className="text-4xl font-bold text-center text-white mb-2 drop-shadow-lg">
           Weather Forecast
         </h1>
         <p className="text-center text-white/80 mb-8 fade-appear">
-          Check live weather instantly
+          Check live weather 
         </p>
 
-        {/* Search */}
+        
         <div className="flex gap-3">
           <input
             onChange={(e) => setCity(e.target.value)}
@@ -77,7 +77,7 @@ export default function App() {
           </button>
         </div>
 
-        {/* Weather Card */}
+        
         {weather && (
           <div className="mt-10 bg-white/20 backdrop-blur-xl p-8 rounded-3xl text-center border border-white/20 shadow-xl animate-card">
 
@@ -99,7 +99,7 @@ export default function App() {
               {disc}
             </p>
 
-            {/* Extra Weather Info */}
+            
             <div className="mt-6 grid grid-cols-3 gap-4 text-white/90 text-sm">
 
               <div>
@@ -119,7 +119,7 @@ export default function App() {
 
             </div>
 
-            {/* City Name */}
+           
             <div className="mt-6 pt-4 border-t border-white/20 fade-appear">
               <p className="text-lg font-medium text-white tracking-wider">
                 {city.toUpperCase()}
@@ -129,7 +129,7 @@ export default function App() {
           </div>
         )}
 
-        {/* Nearby towns */}
+
         {nearby.length > 0 && (
           <div className="mt-8">
             <h2 className="text-xl text-white font-bold mb-3">
